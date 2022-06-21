@@ -1,0 +1,19 @@
+<html>
+<body>
+<a href="/produits/">Liste de produits</a>
+<form action="/produits/updateaction" method="post">
+Désignation:<input type="text" name="nom"value="{{data.designation}}"/>
+Type:<input type="text" name="type"value="{{data.type}}"/>
+Prix:<input type="number" name="price"value="{{data.prix}}"/>
+<input type="hidden" name ="secretid" value="{{data._id}}">
+<input type="submit" value="modifier"/>
+</form>
+
+
+
+</body>
+
+
+
+
+</html>

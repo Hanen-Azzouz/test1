@@ -1,0 +1,39 @@
+<html>
+<body>
+<fieldset><legend><b>Chercher un produit</b></legend>
+<form action="/produits/searchAction" method="post">
+<label>Désignation:</label><input type="text"name="searchnom">
+<label>Type:</label><input type="text"name="searchtype"><br>
+<input type="submit" name="search" value="Chercher">
+<input type="reset"name="cancel"value="Annuler">
+
+
+</form>
+</fieldset>
+
+<td><a href="/produits/formadd">Ajouter un produit</a></td><br><br>
+<h1>liste des produits</h1>
+<table border="1">
+<thead>
+<th>Désignation</th>
+<th>Type</th>
+<th>Prix</th>
+<th colspan=2">Action</th>
+</thead>
+<tbody>
+{% for item in data %}
+<tr>
+<td>{{item.designation}}</td>
+<td>{{item.type}}</td>
+<td>{{item.prix}}</td>
+<td><a href="/produits/delete/{{item._id}}">Delete Produit</a></td>
+<td><a href="/produits/update/{{item._id}}">Modifier Produit</a></td>
+
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+</body>
+
+</html>
